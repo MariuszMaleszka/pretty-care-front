@@ -1,0 +1,159 @@
+---
+// TypeScript frontmatter unchanged
+interface Props {
+    href?: string;
+    variant?: 'primary' | 'gold' | 'ghost';
+    size?: 'sm' | 'md' | 'lg';
+    disabled?: boolean;
+    type?: 'button' | 'submit' | 'reset';
+    target?: string;
+    rel?: string;
+    class?: string;
+}
+
+const {
+    href,
+    variant = 'primary',
+    size = 'md',
+    disabled = false,
+    type = 'button',
+    target,
+    rel,
+    class: extraClass = '',
+} = Astro.props as Props;
+
+const tag = href ? 'a' : 'button';
+const classes = ['ctaBtn', variant, size, disabled ? 'disabled' : '', extraClass].filter(Boolean).join(' ');
+---
+{tag === 'a' ? (
+<a class={classes} href={href} target={target} rel={rel}>
+    <span class="content"><slot /></span>
+</a>
+    ) : (
+<button class={classes} disabled={disabled} type={type}>
+    <span class="content"><slot /></span>
+</button>
+    )}
+
+<style lang="scss">
+  .ctaBtn {
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 50px;
+    font-weight: 400;
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    background-clip: padding-box;
+    -webkit-font-smoothing: antialiased;
+    transform: translateZ(0);
+    transition: color 160ms ease, transform 150ms ease;
+    outline: none; /* remove default focus outline */
+    text-transform: uppercase;
+  }
+
+  /* explicit content wrapper so text is positioned above the overlay */
+  .ctaBtn .content {
+    position: relative;
+    z-index: 3;
+    display: inline-flex; /* keeps layout consistent for inline text */
+    align-items: center;
+    justify-content: center;
+    pointer-events: none; /* allow clicks to pass to the button/link itself */
+  }
+
+  /* keep keyboard focus from showing a border */
+  .ctaBtn:focus-visible {
+    box-shadow: none;
+    border: none;
+    outline: none;
+  }
+
+  .ctaBtn.disabled,
+  .ctaBtn[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  /* Primary variant */
+  .ctaBtn.primary {
+    background: var(--red-primary);
+    color: white;
+    border: none;
+  }
+
+  /* other variants */
+  .ctaBtn.gold {
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    background: transparent;
+  }
+
+  /* overlay (behind content) - extend slightly to avoid hairline */
+  .ctaBtn.primary::before {
+    content: "";
+    position: absolute;
+    inset: -2px; /* extend more to fully cover any hairline */
+    background: var(--red-orange-gradient);
+    opacity: 0;
+    transition: opacity 240ms ease;
+    pointer-events: none;
+    z-index: 1; /* below .content (3) but above base background */
+    border-radius: inherit;
+    transform: translateZ(0);
+    will-change: opacity;
+  }
+
+  .ctaBtn.gold::before {
+    content: "";
+    position: absolute;
+    inset: -2px; /* extend more to fully cover any hairline */
+    background: var(--gold-gradient);
+    opacity: 0;
+    transition: opacity 240ms ease;
+    pointer-events: none;
+    z-index: 1; /* below .content (3) but above base background */
+    border-radius: inherit;
+    will-change: opacity;
+  }
+
+  .ctaBtn.primary:hover::before,
+  .ctaBtn.primary:focus-visible::before {
+    opacity: 1;
+  }
+
+  .ctaBtn.primary:hover,
+  .ctaBtn.primary:focus-visible,
+  .ctaBtn.gold:hover,
+  .ctaBtn.gold:focus-visible {
+    color: white;
+  }
+
+  .ctaBtn.gold:hover::before,
+  .ctaBtn.gold:focus-visible::before {
+    opacity: 1;
+  }
+
+  .ctaBtn.ghost {
+    background: #ffff;
+    transition: background 240ms ease, color 240ms ease;
+    color: var(--gray-darken);
+    border: 1px solid var(--gray-darken);
+  }
+    .ctaBtn.ghost:hover {
+      background: var(--gray-primary);
+    }
+
+  /* Sizes */
+  .sm { font-size: 0.85rem;  }
+  .md { font-size: 1rem;  }
+  .lg { font-size: 1.5rem;  }
+</style>

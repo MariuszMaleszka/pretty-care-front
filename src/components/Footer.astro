@@ -1,0 +1,58 @@
+---
+import {Image} from "astro:assets";
+import pcLogo2 from '../assets/pc-logo-2.svg';
+import facebookPic from '../assets/social-icon-fb-ring.svg';
+import igPic from '../assets/social-icon-ig-ring.svg';
+import linPic from '../assets/social-icon-li-ring.svg';
+
+import PageSeparator from "./PageSeparator.astro";
+---
+<PageSeparator />
+<footer class="wrapper ">
+    <div class="flex px-4 flex-col sm:flex-row mt-12 text-[#575756]">
+        <div class="flex-2 text-center">
+            <Image class="mb-8 mx-auto sm:mx-0" src={pcLogo2} alt="pretty care"/>
+        </div>
+        <div class="flex flex-col items-center text-center sm:items-start sm:text-left sm:flex-row flex-2 gap-x-12 gap-y-8">
+            <div class="flex flex-1 flex-col">
+                <h4 class="mb-2 font-semibold">Adres:</h4>
+                <p>Rent&Sale</p>
+                <p>Legionów Polskich 4</p>
+                <p>62-090 Rokietnica</p>
+                <p>NIP: 585-101-21-93</p>
+            </div>
+            <div class="flex flex-1 flex-col">
+                <h4 class="mb-2 font-semibold">Na skróty:</h4>
+                <a class="whitespace-nowrap" href="/">Start</a>
+                <a class="whitespace-nowrap" href="/sklep">Sklep</a>
+                <a class="whitespace-nowrap" href="/o-nas">O nas</a>
+                <a class="whitespace-nowrap" href="/o-probiotykach">O probiotykach</a>
+                <a class="whitespace-nowrap" href="/artykuly">Artykuły</a>
+                <a class="whitespace-nowrap" href="/kontakt">Kontakt</a>
+                <a class="whitespace-nowrap" href="/regulamin">Regulamin sklepu</a>
+                <a class="whitespace-nowrap" href="/polityka-prywatnosci">Polityka prywatności</a>
+
+            </div>
+            <div class="flex flex-1 flex-col">
+                <h4 class="mb-2 font-semibold">Media społecznościowe:</h4>
+                <div class="flex  gap-2">
+                    <a href="/" title="facebook">
+                        <Image src={facebookPic} alt="facebook"/>
+                    </a>
+                    <a href="/" title="instagram">
+                        <Image src={igPic} alt="instagram"/>
+                    </a>
+                    <a href="/" title="linkedin">
+                        <Image src={linPic} alt="linkedin"/>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <p class="text-center mt-8">&copy; {new Date().getFullYear()} Remt& Sale. Wszelkie prawa zastrzeżone.</p>
+
+
+</footer>

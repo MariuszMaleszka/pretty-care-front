@@ -1,0 +1,100 @@
+---
+import {Image} from 'astro:assets';
+import pcLogo1 from '../assets/pc-logo-1.svg';
+import shoppingBag from '../assets/shopping-bag.svg';
+import accountUser from '../assets/account-user.svg';
+
+---
+<header class="page-header wrapper flex items-center justify-between relative">
+    <Image src={pcLogo1} alt="pretty care"/>
+
+    <nav class="flex items-center">
+        <!-- Desktop menu -->
+        <ul id="nav-list" class="hidden md:flex gap-4 mr-4">
+            <li>Menu item 1</li>
+            <li>Menu item 2</li>
+            <li>Menu item 3</li>
+            <li>Menu item 4</li>
+            <li>Menu item 5</li>
+            <li>Menu item 6</li>
+        </ul>
+
+        <!-- Hamburger button (mobile only) -->
+        <button
+                id="nav-toggle"
+                class="md:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+                aria-expanded="false"
+                aria-controls="mobile-panel"
+                title="Toggle menu"
+        >
+            <span class="sr-only">Open menu</span>
+            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                 stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+        </button>
+        <div class="user-actions flex items-center">
+            <a
+                    class="p-1  "
+                    title="Profil"
+                    href="/profil"
+                    aria-label="Koszyk"
+                    type="button"
+            >
+                <Image min-width="40px" max-width="40px" src={accountUser} alt="Account"/>
+
+            </a>
+            <a
+                    class="relative p-1 "
+                    title="Koszyk"
+                    href="/sklep"
+                    aria-label="Account"
+                    type="button"
+            >
+                <Image min-width="40px" max-width="40px" src={shoppingBag} alt="Shopping cart"/>
+
+                <span
+                        aria-hidden="true"
+                        class="counter-badge absolute -top-2 -right-2 inline-flex items-center justify-center  text-white text-xs font-semibold rounded-full"
+                >
+                 4
+        </span>
+            </a>
+
+        </div>
+    </nav>
+
+    <!-- Mobile dropdown (hidden by default) -->
+    <div id="mobile-panel"
+         class="md:hidden hidden absolute left-0 right-0 top-full mt-2 bg-white shadow-lg rounded-b-md z-50">
+        <ul class="flex flex-col gap-2 p-3">
+            <li class="px-2 py-2 hover:bg-gray-100 rounded">Menu item 1</li>
+            <li class="px-2 py-2 hover:bg-gray-100 rounded">Menu item 2</li>
+            <li class="px-2 py-2 hover:bg-gray-100 rounded">Menu item 3</li>
+            <li class="px-2 py-2 hover:bg-gray-100 rounded">Menu item 4</li>
+            <li class="px-2 py-2 hover:bg-gray-100 rounded">Menu item 5</li>
+            <li class="px-2 py-2 hover:bg-gray-100 rounded">Menu item 6</li>
+        </ul>
+    </div>
+</header>
+
+<script type="module">
+    const toggle = document.getElementById('nav-toggle');
+    const panel = document.getElementById('mobile-panel');
+
+    toggle?.addEventListener('click', () => {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!expanded));
+        panel.classList.toggle('hidden');
+    });
+
+    // Close on outside click
+    document.addEventListener('click', (e) => {
+        if (!panel || !toggle) return;
+        if (panel.contains(e.target) || toggle.contains(e.target)) return;
+        if (!panel.classList.contains('hidden')) {
+            panel.classList.add('hidden');
+            toggle.setAttribute('aria-expanded', 'false');
+        }
+    });
+</script>

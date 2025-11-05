@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+/* Tailwind CSS Breakpoints*/
+/*sm	40rem (640px)	*/
+/*md	48rem (768px)	*/
+/*lg	64rem (1024px)	*/
+/*xl	80rem (1280px)	*/
+/*2xl	96rem (1536px)	*/
+
+:root {
+    --red-primary: #FF3806;
+    --red-orange-gradient: linear-gradient(90deg, rgba(255, 56, 6, 1) 0%, rgba(241, 218, 98, 1) 100%);
+    --gold: #C89E3E;
+    --gold-gradient: linear-gradient(90deg,rgba(234, 202, 129, 1) 0%, rgba(200, 158, 62, 1) 87%);
+    --gray-primary: rgba(87, 87, 86, 0.25);
+    --gray-darken: #575756;
+}
+
+.wrapper {
+    max-width: 1220px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.counter-badge {
+    background-color: var(--gold);
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    min-height: 20px;
+    max-width: 20px;
+    max-height: 20px;
+}
+
+.text-gold {
+    color: var(--gold);
+}
