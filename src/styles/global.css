@@ -7,6 +7,8 @@
 /*xl	80rem (1280px)	*/
 /*2xl	96rem (1536px)	*/
 
+
+
 :root {
     --red-primary: #FF3806;
     --red-orange-gradient: linear-gradient(90deg, rgba(255, 56, 6, 1) 0%, rgba(241, 218, 98, 1) 100%);
@@ -14,15 +16,33 @@
     --gold-gradient: linear-gradient(90deg,rgba(234, 202, 129, 1) 0%, rgba(200, 158, 62, 1) 87%);
     --gray-primary: rgba(87, 87, 86, 0.25);
     --gray-darken: #575756;
+    --text-smoked: #575756;
+}
+
+html {
+    font-family: museo-sans, sans-serif;
+}
+.museo-font {
+    font-family: museo-sans, sans-serif;
+}
+.ivy-font {
+    font-family: IvyPresto Display, serif;
+}
+.ivy-ora-font {
+    font-family: IvyOra Display, serif;
+}
+.balboa-font {
+    font-family: Balboa, serif;
 }
 
 .wrapper {
-    max-width: 1220px;
+    max-width: 1422px;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
 }
 
+/* dot in header cart icon*/
 .counter-badge {
     background-color: var(--gold);
     color: #fff;
@@ -36,4 +56,128 @@
 
 .text-gold {
     color: var(--gold);
+}
+.text-smoked {
+    color: var(--text-smoked);
+}
+
+.bg-gold-gradient-skew {
+    background: #F3E06B;
+    background: linear-gradient(160deg,rgba(243, 224, 107, 1) 0%, rgba(200, 159, 63, 1) 100%);
+}
+
+/* navigation */
+.nav-items {
+    a {
+        position: relative;
+        &::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--text-smoked);
+            opacity: 0;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: opacity 0.2s ease, transform 0.3s ease;
+        }
+        &:hover::after {
+            opacity: 1;
+            transform: scaleX(1);
+        }
+    }
+}
+
+/* hide breathtaking designer circle on header-decor element mobile*/
+.hide-designer-circle-on-mobile {
+    @media (max-width: 768px) {
+      .breathtaking-designer-circle {
+            display: none;
+        }
+    }
+}
+
+
+.newsletter-container {
+    position: relative;
+    z-index: 1;
+}
+
+.newsletter-container::before,
+.newsletter-container::after {
+  display: none;
+    @media (min-width: 1024px) {
+        display: block;
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 85px;
+        background: #fff;
+        border-radius: 100% / 100%;
+        z-index: 2;
+    }
+}
+
+.newsletter-container::before {
+    top: -42.5px; /* half of height to overlap */
+}
+
+.newsletter-container::after {
+    bottom: -42.5px; /* half of height to overlap */
+}
+
+input {
+    padding: .5rem 1rem;
+    border: 1px solid var(--gold);
+    border-radius: 9px;
+    background: rgba(200, 158, 62, 0.13);
+}
+.custom-checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+}
+
+.custom-checkbox-input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.custom-checkbox-box {
+    margin-top: 0.25rem;
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 1px solid var(--gold);
+    border-radius: 6px;
+    background: rgba(200, 158, 62, 0.13);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.custom-checkbox-input:checked + .custom-checkbox-box {
+    background: var(--gold);
+    border-color: var(--gold);
+}
+
+.custom-checkbox-box svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.custom-checkbox-input:checked + .custom-checkbox-box svg {
+    opacity: 1;
+    color: #fff;
 }

@@ -2,47 +2,58 @@
 import {Image} from 'astro:assets';
 import pcLogo1 from '../assets/pc-logo-1.svg';
 import pcLogo2 from '../assets/pc-logo-2.svg';
+import hero_1 from '../assets/hero_1.png';
+import hero_1_mobile from '../assets/hero_1_mobile.png';
+import hero_bottles from '../assets/hero_bottles.png';
 import sampleProduct from '../assets/sample_product.png';
 // import background from '../assets/background.svg';
 import CtaBtn from './CtaBtn.astro';
 import ProductTile from './ProductTile.astro';
+import HeadingPrimary from './HeadingPrimary.astro';
+import HeadingSecondary from './HeadingSecondary.astro';
+import HeadingDecor from './HeadingDecor.astro';
 ---
 
 
+<section id="hero" class="my-10 md:my-20">
+    <div class="wrapper px-4 md:px-6">
+        <div class="flex md:flex-row flex-col">
+            <div>
+                <div class="lg:ml-30 mb-10 text-center md:text-left text-smoked">
+                    <HeadingPrimary>
+                        Naturalne <span class="text-gold">probiotyki <br>i&nbsp;postbiotyki</span>
+                    </HeadingPrimary>
+                </div>
 
-    <section id="hero">
-        <Image src={pcLogo1} alt="pretty care"/>
-        <Image src={pcLogo2} alt="pretty care"/>
-        <h>
-            Pretty care
-        </h>
-        <div class="actions flex flex-col gap-y-2">
-            <!-- large primary as a link -->
-            <CtaBtn href="/get-started" variant="primary" size="lg" target="_self">Sprawdź</CtaBtn>
-            <CtaBtn href="/get-started" variant="primary" size="md" target="_self">Dodaj do koszyka</CtaBtn>
-
-            <!-- medium secondary as a plain button -->
-            <CtaBtn variant="gold" size="lg" type="button">Dowiedz się więcej</CtaBtn>
-            <CtaBtn variant="gold" size="md" type="button">Dowiedz się więcej</CtaBtn>
-
-            <!-- small ghost, disabled -->
-            <CtaBtn variant="ghost" size="lg">Not Available</CtaBtn>
-            <CtaBtn variant="ghost" size="sm" disabled>Not Available</CtaBtn>
-            <ProductTile
-                    image={sampleProduct}
-                    title="Red Shirt"
-                    category="Probiotyki"
-                    price="29.99"
-                    promo="19.99"
-            />
-            <ProductTile
-                    image={sampleProduct}
-                    title="Red Shirt"
-                    category="Probiotyki"
-                    price="29.99"
-            />
+                <!--m: nie chcem ale muszem-->
+                <!--hide it on desktop-->
+                <Image class="md:hidden sm:max-w-3/4 mx-auto" loading="lazy" src={hero_bottles} alt="19 szczepów bakterii probiotycznych"/>
+                <!--show on desktop-->
+                <Image class="hidden md:block" src={hero_1} alt="19 szczepów bakterii probiotycznych"/>
+                <!--hide on desktop-->
+                <Image class="md:hidden w-4/5 md:w-auto mx-auto mt-8" loading="lazy" src={hero_1_mobile} alt="19 szczepów bakterii probiotycznych"/>
+            </div>
+            <div>
+                <!--show on desktop-->
+                <Image class="hidden md:block" loading="lazy" src={hero_bottles} alt="19 szczepów bakterii probiotycznych"/>
+            </div>
         </div>
-    </section>
+        <div class="flex justify-center mt-8 md:mt-10">
+            <!--m: nie chcem ale muszem-->
+            <div class="hidden md:inline-flex mt-14">
+                <CtaBtn class="px-16 py-2 " href="/get-started" variant="primary" size="lg" target="_self">Sprawdź</CtaBtn>
+            </div>
+            <div class="md:hidden mt-8">
+                <CtaBtn class="px-16 py-2 " href="/get-started" variant="primary" size="sm" target="_self">Sprawdź</CtaBtn>
+            </div>
+
+        <!--<CtaBtn class="px-16 py-2" href="/get-started" variant="primary" size="lg" target="_self">Sprawdź</CtaBtn>-->
+        </div>
+
+    </div>
+</section>
+
+
 
 
 

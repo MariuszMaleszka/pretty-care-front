@@ -1,11 +1,327 @@
 ---
+import {Image} from 'astro:assets';
 import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import HeadingPrimary from "../components/HeadingPrimary.astro";
+import HeadingDecor from "../components/HeadingDecor.astro";
+import CtaBtn from '../components/CtaBtn.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// images
+import immunPostbiotiqImage from '../assets/immun_posbiotiq_golden_circle.png';
+import balanceProbiotiqImage from '../assets/balance_biotiq_gray_circle.png';
+
+import stomachIcon from '../assets/usage_stomach_i.png';
+import immunesysIcon from '../assets/usage_immunesys_i.png';
+import brainIcon from '../assets/usage_brain_i.png';
+import diseaseIcon from '../assets/usage_disase_i.png';
+import handIcon from '../assets/usage_hand_i.png';
 ---
 
 <Layout>
-	<Welcome />
+    <Welcome/>
+    <section>
+        <div class="wrapper md:px-6 px-4 my-10 md:my-20">
+            <div class="flex justify-center md:mb-10">
+                <HeadingDecor>
+                    Co to jest <span class="text-gold">płynny probiotyk</span>
+                </HeadingDecor>
+            </div>
+            <div class="flex lg:items-end flex-col lg:flex-row gap-x-30">
+                <div class="flex flex-col text-[16px] md:text-[20px] text-smoked leading-normal lg:-mb-8">
+                    <div class="mt-12 md:mt-0">
+                        W dobie rosnącej świadomości znaczenia zdrowej mikrobioty jelitowej, pojawił się nowy sojusznik
+                        naszego zdrowia – płynny postbiotyk. Stanowi on esencję naturalnej fermentacji,
+                        będąc bioaktywnym
+                        “eliksirem” pełnym metabolitów wytwarzanych przez dobre bakterie podczas procesu fermentacji.
+                        <br>
+                        <br>
+                        Innymi słowy, postbiotyki to nieżywe już kultury czy błonnik prebiotyczny, ale korzystne dla
+                        zdrowia
+                        związki (np. krótkołańcuchowe kwasy tłuszczowe, polifenole, enzymy, peptydy) powstające “po
+                        życiu”
+                        bakterii probiotycznych Taka fermentacyjna esencja w formie płynnej zawiera całą paletę
+                        naturalnych
+                        substancji aktywnych – od kwasu masłowego i mlekowego, przez antyoksydanty, po bakteriocyny –
+                        które
+                        wspólnie wspierają organizm na wielu poziomach.
+                    </div>
+                    <div class="flex justify-center ">
+                        <div class="hidden md:inline-flex mt-14">
+                            <CtaBtn class="px-16 py-2 " href="/get-started" variant="primary" size="lg" target="_self">
+                                Sprawdź
+                            </CtaBtn>
+                        </div>
+                        <div class="md:hidden mt-12">
+                            <CtaBtn class="px-16 py-2 " href="/get-started" variant="primary" size="sm" target="_self">
+                                Sprawdź
+                            </CtaBtn>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col items-center  mt-16">
+                    <span class="mb-4 uppercase font-[700] text-gold  text-[20px] md:text-[32px]">czy wiesz że...</span>
+                    <div class="flex justify-center items-center bg-gold-gradient-skew rounded-[50%] p-16 text-white  aspect-square text-[16px] md:text-[20px] leading-normal w-[310px] md:w-[375px]">
+                        W dobie rosnącej świadomości znaczenia zdrowej mikrobioty jelitowej, pojawił się nowy sojusznik
+                        naszego zdrowia – płynny postbiotyk.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section>
+        <div class="wrapper px-4 my-10 md:my-20">
+            <div class="shadow-xl rounded-[65px] border-1 border-[color:var(--gold)] mx-auto sm:w-3/4 lg:w-auto">
+                <div class="flex justify-center my-8 md:my-20 hide-designer-circle-on-mobile">
+                    <HeadingDecor>
+                        <span class="text-gold">Nasze</span> probiotyki
+                    </HeadingDecor>
+                </div>
+                <div class="flex flex-col gap-y-14 lg:gap-y-28 px-7 sm:px-14 lg:px-28 pb-10 md:pb-20">
+                    <div class="flex flex-wrap justify-center">
+                        <div class="flex w-100 lg:w-1/2 flex-col">
+                            <div class="text-smoked lg:pr-12">
+                                <HeadingPrimary>
+                                    Immun <span class="text-gold">PostBiotiQ</span>
+                                </HeadingPrimary>
+                                <p class="uppercase text-gold font-medium text-[14px] lg:text-[24px] leading-[14px] lg:leading-[24px] mt-4 lg:mt-6 mb-6 lg:mb-14">
+                                    POSTBIOTYK DLA DOROSŁYCH <br>I DZIECI POWYŻEJ 3 ROKU ŻYCIA</p>
+
+                                <p>
+                                    Innymi słowy, postbiotyki to nieżywe już kultury czy błonnik prebiotyczny,
+                                    ale korzystne
+                                    dla zdrowia związki (np. krótkołańcuchowe kwasy tłuszczowe, polifenole, enzymy,
+                                    peptydy)
+                                    powstające “po życiu” bakterii probiotycznych Taka fermentacyjna esencja w formie
+                                    płynnej zawiera całą paletę naturalnych substancji aktywnych – od kwasu masłowego i
+                                    mlekowego, przez antyoksydanty, po bakteriocyny – które wspólnie wspierają organizm
+                                    na
+                                    wielu poziomach.
+                                </p>
+                                <!--m: nie chcem ale muszem-->
+                                <div class="lg:hidden mt-8">
+                                    <Image src={immunPostbiotiqImage} alt="Immun PostBiotiQ"/>
+                                </div>
+
+                                <div class="flex justify-center ">
+                                    <div class="hidden lg:inline-flex mt-14">
+                                        <CtaBtn class="px-16 py-2 " href="/sklep" variant="primary" size="lg"
+                                                target="_self">
+                                            Zamów
+                                        </CtaBtn>
+                                    </div>
+                                    <div class="lg:hidden mt-8">
+                                        <CtaBtn class="px-16 py-2 " href="/sklep" variant="primary" size="sm"
+                                                target="_self">
+                                            Zamów
+                                        </CtaBtn>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden lg:block lg:w-1/2">
+                            <Image src={immunPostbiotiqImage} alt="Immun PostBiotiQ"/>
+                        </div>
+                    </div>
+                    <!--    -->
+                    <div class="flex flex-row-reverse flex-wrap justify-center">
+                        <div class="flex w-100 lg:w-1/2 flex-col">
+                            <div class="text-smoked lg:pl-12">
+                                <HeadingPrimary>
+                                    Balance <span class="text-gold">BiotiQ</span>
+                                </HeadingPrimary>
+                                <p class="uppercase text-gold font-medium text-[14px] lg:text-[24px] leading-[14px] lg:leading-[24px] mt-4 lg:mt-6 mb-6 lg:mb-14">
+                                    POSTBIOTYK DLA DOROSŁYCH <br>O SMAKU MALINOWYM</p>
+
+                                <p>
+                                    Innymi słowy, postbiotyki to nieżywe już kultury czy błonnik prebiotyczny,
+                                    ale korzystne
+                                    dla zdrowia związki (np. krótkołańcuchowe kwasy tłuszczowe, polifenole, enzymy,
+                                    peptydy)
+                                    powstające “po życiu” bakterii probiotycznych Taka fermentacyjna esencja w formie
+                                    płynnej zawiera całą paletę naturalnych substancji aktywnych – od kwasu masłowego i
+                                    mlekowego, przez antyoksydanty, po bakteriocyny – które wspólnie wspierają organizm
+                                    na
+                                    wielu poziomach.
+                                </p>
+                                <!--m: nie chcem ale muszem-->
+                                <div class="lg:hidden mt-8">
+                                    <img loading="lazy" src="/src/assets/balance_biotiq_gray_circle.png"
+                                         alt="Immun PostBiotiQ"/>
+                                </div>
+
+                                <div class="flex justify-center ">
+                                    <div class="hidden lg:inline-flex mt-14">
+                                        <CtaBtn class="px-16 py-2 " href="/sklep" variant="primary" size="lg"
+                                                target="_self">
+                                            Zamów
+                                        </CtaBtn>
+                                    </div>
+                                    <div class="lg:hidden mt-8">
+                                        <CtaBtn class="px-16 py-2 " href="/sklep" variant="primary" size="sm"
+                                                target="_self">
+                                            Zamów
+                                        </CtaBtn>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden lg:block lg:w-1/2">
+                            <img loading="lazy" src="/src/assets/balance_biotiq_gray_circle.png" alt="balance biotiq"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="wrapper px-4 md:px-30">
+            <div class="flex justify-center my-8 md:my-20 ">
+                <HeadingDecor>
+                    Zastosowania<span class="text-gold">płynnych probiotyków</span>
+                </HeadingDecor>
+
+            </div>
+            <div class="flex flex-wrap gap-y-10 gap-x-40 justify-center text-center uppercase text-smoked mt-10 mt:my-20">
+                <div class="flex flex-col gap-5 md:gap-10 justify-center items-center mb-4 md:mb-0">
+                    <img src="/src/assets/usage_stomach_i.png" alt="Image 1" class="max-200]"/>
+                    <p>schorzenia przewodu <br> pokarmowego</p>
+                </div>
+                <div class="flex flex-col gap-5 md:gap-10 justify-center items-center mb-4 md:mb-0">
+                    <img src="/src/assets/usage_immunesys_i.png" alt="Image 1" class="max-w-[200px]"/>
+                    <p>Wsparcie układu <br> immunologicznego</p>
+                </div>
+                <div class="flex flex-col gap-5 md:gap-10 justify-center items-center mb-4 md:mb-0">
+                    <img src="/src/assets/usage_brain_i.png" alt="Image 1" class="max-w-[200px]"/>
+                    <p>Oś jelito–mózg i zdrowie <br> psychiczne</p>
+                </div>
+                <div class="flex flex-col gap-5 md:gap-10 justify-center items-center mb-4 md:mb-0">
+                    <img src="/src/assets/usage_disase_i.png" alt="Image 1" class="max-w-[200px]"/>
+                    <p>Choroby metaboliczne</p>
+                </div>
+                <div class="flex flex-col gap-5 md:gap-10 justify-center items-center mb-4 md:mb-0">
+                    <img src="/src/assets/usage_hand_i.png" alt="Image 1" class="max-w-[200px]"/>
+                    <p>Inne schorzenia związane <br> z mikrobiotą</p>
+                </div>
+
+            </div>
+            <div class="flex justify-center  mb-8 md:mb-20">
+                <div class="hidden lg:inline-flex mt-14">
+                    <CtaBtn class="px-16 py-2 " href="/sklep" variant="gold" size="lg"
+                            target="_self">
+                        dowiedz się więcej
+                    </CtaBtn>
+                </div>
+                <div class="lg:hidden mt-8">
+                    <CtaBtn class="px-16 py-2 " href="/sklep" variant="gold" size="sm"
+                            target="_self">
+                        dowiedz się więcej
+                    </CtaBtn>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="wrapper px-4 md:px-30 ">
+            <div class="flex justify-center my-8 md:my-20 ">
+                <HeadingDecor>
+                    <span class="text-gold">O Pretty</span> Care
+                </HeadingDecor>
+
+            </div>
+            <div class="flex justify-center gap-y-4 md:gap-y-8 flex-wrap my-8 md:my-20">
+                <div class="w-100 lg:w-1/2 lg:pr-12 md:mb-0">
+                    <img class="md:ml-auto" loading="lazy" src="/src/assets/about_home.png" alt="o nas"/>
+                </div>
+                <div class="w-100 lg:w-1/2 text-smoked">
+                    Naszą misją jest przekształcanie osobistej historii w siłę dla innych – łączymy doświadczenie
+                    pacjentki z zaawansowanym rakiem szyjki macicy z najnowszą wiedzą naukową i naturalnymi
+                    składnikami. Nasza założycielka, po intensywnej walce z chorobą i odważnej decyzji o odejściu od
+                    leczenia systemowego, stała się inspiracją dla całego zespołu.
+                    <br>
+                    <br>
+                    Wspólnie z dr Justyną Piechocką i prof. Darią Szymanowską stworzyłyśmy receptury produktów,
+                    które wychodzą naprzeciw potrzebom świadomych kobiet i osób dbających o zdrowie. Każdy produkt
+                    to hołd dla siły natury i fermentacji – bazując na intuicji, ale popartych badaniami, pragniemy
+                    dawać realne wsparcie organizmowi. Wierzymy, że połączenie nauki i serca umożliwia tworzenie
+                    formuł, które budują odporność i regenerację świadomych kobiet i mężczyzn na całym świecie.
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="newsletter-container relative flex justify-center items-center my-10 md:my-20">
+
+            <img class="object-cover w-full h-full absolute hidden lg:block" loading="lazy" src="/src/assets/newsletter_bg_desktop.png"
+                 alt="newsletter"/>
+            <img class="object-cover w-full h-full absolute block lg:hidden" loading="lazy" src="/src/assets/newsletter_bg_mobile.png"
+                 alt="newsletter"/>
+
+
+            <div class="relative xl:w-2/3  my-20">
+                <div class="flex flex-col items-center  lg:flex-row text-white px-4 xl:px-0">
+                    <div class="w-1/2 flex flex-col justify-center items-center md:mr-5">
+                        <h2 class="text-white ivy-ora-font font-semibold text-[74px] md:text-[100px] ">
+                            Newsletter
+                        </h2>
+                        <div class="flex items-center font-[700] uppercase -mt-10">
+                            <div class="flex items-baseline text-left font-bold mr-2 balboa-font mb-4">
+                                <p class="m-0 text-[84px]">5</p>
+                                <p class="m-0 text-[44px] -ml-1">%</p>
+                            </div>
+
+                            <p class="text-left text-[22px] leading-[22px]">rabatu na pierwsze <br> zamówienie po
+                                zapisie
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class=" md:w-1/2 bg-white py-10 px-10 md:px-22 rounded-[65px] text-smoked">
+                        <p class="text-gold leading-[18px] text-[18px]">
+                            Dołącz do naszej społeczności i poczuj, jak moc natury może działać na Twoje zdrowie.
+                        </p>
+                        <form class="flex flex-col mt-4">
+                            <label for="email" class="">Email</label>
+                            <input type="email" autocomplete="off" name="email" id="email"/>
+
+                            <label class="custom-checkbox-label">
+                                <input type="checkbox" class="custom-checkbox-input"/>
+                                <span class="custom-checkbox-box">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                      <path d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                  </span>
+                                <small class="font-light">
+                                    Wyrażam zgodę na przesyłanie informacji handlowych na wskazany adres e-mail.
+                                    Szczegółowe
+                                    informacje o przetwarzaniu danych znajdzesz w naszej
+                                    <a href="/polityka-prywatnosci" target="_self">POLITYCE PRYWATNOŚCI</a>
+                                </small>
+                            </label>
+                            <div class="flex justify-center">
+                                <div class="hidden lg:inline-flex mt-8">
+                                    <CtaBtn type="submit" class="px-16 py-2 " href="/sklep" variant="primary" size="lg"
+                                            target="_self">
+                                        zapisz mnie
+                                    </CtaBtn>
+                                </div>
+                                <div class="lg:hidden mt-8">
+                                    <CtaBtn type="submit" class="px-16 py-2 " href="/sklep" variant="primary" size="sm"
+                                            target="_self">
+                                        zapisz mnie
+                                    </CtaBtn>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
 </Layout>
