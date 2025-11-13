@@ -21,6 +21,8 @@
 
 html {
     font-family: museo-sans, sans-serif;
+    color: var(--text-smoked);
+
 }
 .museo-font {
     font-family: museo-sans, sans-serif;
