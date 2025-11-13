@@ -22,6 +22,7 @@
 html {
     font-family: museo-sans, sans-serif;
     color: var(--text-smoked);
+    font-weight: 300;
 
 }
 .museo-font {
@@ -182,4 +183,15 @@ input {
 .custom-checkbox-input:checked + .custom-checkbox-box svg {
     opacity: 1;
     color: #fff;
+}
+
+.wyswig {
+    ul {
+        margin-block: 4px;
+        list-style: unset    ;
+        li {
+            margin-left: 24px;
+            margin-bottom: 4px;
+        }
+    }
 }
