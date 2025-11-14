@@ -63,10 +63,16 @@ html {
 .text-smoked {
     color: var(--text-smoked);
 }
-
+.bg-gold {
+    background-color: var(--gold);
+}
 .bg-gold-gradient-skew {
     background: #F3E06B;
     background: linear-gradient(160deg,rgba(243, 224, 107, 1) 0%, rgba(200, 159, 63, 1) 100%);
+}
+.bg-grey-gradient-skew {
+    background: #ACACAC;
+    background: linear-gradient(160deg,rgba(172, 172, 172, 1) 0%, rgba(87, 87, 86, 1) 100%);
 }
 
 /* navigation */
@@ -193,5 +199,33 @@ input {
             margin-left: 24px;
             margin-bottom: 4px;
         }
+    }
+}
+
+.striped-lines-gold {
+    :first-child {
+        color: var(--gold);
+        font-weight: 700;
+    }
+}
+.striped-lines-smoked {
+    :first-child {
+        font-weight: 700;
+    }
+}
+.counter-circle{
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    min-height: 32px;
+    max-width: 32px;
+    max-height: 32px;
+    @media(min-width: 1024px){
+        width: 58px;
+        height: 58px;
+        min-width: 58px;
+        min-height: 58px;
+        max-width: 58px;
+        max-height: 58px;
     }
 }
