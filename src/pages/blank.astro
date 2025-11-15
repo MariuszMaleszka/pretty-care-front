@@ -1,0 +1,193 @@
+---
+import {Image} from "astro:assets";
+import PageSeparator from "../components/PageSeparator.astro";
+import Layout from '../layouts/Layout.astro';
+import HeadingPrimary from "../components/HeadingPrimary.astro";
+import CtaBtn from "../components/CtaBtn.astro";
+import ProductTile from "../components/ProductTile.astro";
+import HeadingSecondary from "../components/HeadingSecondary.astro";
+import HeadingDecor from "../components/HeadingDecor.astro";
+import HeadingDecorBig from "../components/HeadingDecorBig.astro";
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout>
+    <section class="my-10 md:my-20">
+        <div class="wrapper px-4 md:px-6">
+
+            <div class="text-gold mb-10 text-center">
+                <HeadingPrimary>
+                    BLANK PAGE
+                </HeadingPrimary>
+            </div>
+            <div>
+                <!-- do wyrzucenia-->
+                <section id="components-demo">
+                    <div class="flex flex-col gap-4 max-w-[400px] mx-auto">
+                        <h2>batony</h2>
+                        <h2>Apply paddings manualy to buttons</h2>
+                        <!-- large primary as a link -->
+                        <CtaBtn href="/get-started" variant="primary" size="lg" target="_self">Sprawdź primary variant
+                            lg
+                        </CtaBtn>
+                        <CtaBtn href="/get-started" variant="primary" size="md" target="_self">Dodaj do koszyka primary
+                            variant md
+                        </CtaBtn>
+
+                        <!-- medium secondary as a plain button -->
+                        <CtaBtn variant="gold" size="lg" type="button">gold variant lg</CtaBtn>
+                        <CtaBtn variant="gold" size="md" type="button">gold variant md</CtaBtn>
+
+                        <!-- small ghost, disabled -->
+                        <CtaBtn variant="ghost" size="lg">ghost variant lg</CtaBtn>
+                        <CtaBtn variant="ghost" size="sm" disabled>ghost variant disabled sm</CtaBtn>
+                    </div>
+
+
+                    <div class="actions flex flex-col gap-y-2">
+
+                        <div class="my-10 flex flex-col gap-10 ">
+                            <h2> headingi:</h2>
+                            <HeadingPrimary>Heading Primary</HeadingPrimary>
+                            <HeadingSecondary>Heading secondary</HeadingSecondary>
+                            <HeadingDecorBig>Heading decor big</HeadingDecorBig>
+                            <HeadingDecor>
+                                Heading<span class="text-gold">decor</span>
+                            </HeadingDecor>
+                        </div>
+                        <div class="my-10 max-w-[400px] mx-auto">
+                            <h2> Kafelek produktu:</h2>
+                            <ProductTile
+                                    image="https://picsum.photos/id/237/200/300"
+                                    title="Red Shirt"
+                                    category="Probiotyki"
+                                    price="29.99"
+                                    promo="19.99"
+                                    href="/"
+                            />
+                            <ProductTile
+                                    image="https://picsum.photos/id/227/200/300"
+                                    title="Red Shirt"
+                                    category="Probiotyki"
+                                    price="29.99"
+                                    href="/"
+                            />
+                        </div>
+                        <div class=" flex flex-col gap-5 max-w-[400px] mx-auto">
+                            <h2>Akordendont prajmery </h2>
+                            <details class="border border-gold rounded-2xl overflow-hidden group">
+                                <summary
+                                        class="bg-gold text-white w-full px-4 md:px-6 py-4 cursor-pointer flex  items-center hover:bg-gray-50 transition-colors list-none ">
+                                    <svg class="min-w-5  mr-2 h-5 transform rotate-[-90deg] transition-transform duration-200 group-open:rotate-0"
+                                         fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                              d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                    <span class="font-semibold leading-none">Jaka jest różnica między probiotykiem w kapsułkach a płynnym Balance BiotiQ?</span>
+                                </summary>
+                                <div class="wyswig px-6 py-4 border-t border-gold">
+                                    <strong>Title</strong>
+                                    <p>Content for accordion item 1 goes here.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur doloremque
+                                        dolores
+                                        dolorum excepturi fugiat fugit illum inventore labore laudantium, magnam, quia,
+                                        quisquam
+                                        repellendus vitae? At ea ipsam magnam sed voluptatum.</p>
+                                </div>
+                            </details>
+
+                            <h2>Akordendont smol</h2>
+                            <div class="small-accordions ">
+
+                                <details class="w-full bg-white px-4 py-2">
+                                    <summary
+                                            class="flex items-center justify-between cursor-pointer text-sm font-medium">
+                                        <span class="accordion-title year font-[700]">2025</span>
+
+                                        <span class="flex items-center ml-3">
+                            <!-- Plus (visible when closed) -->
+                            <svg class="icon-plus w-4 h-4 text-gray-700" viewBox="0 0 24 24" fill="none"
+                                 stroke="currentColor"
+                                 stroke-width="2" aria-hidden="true">
+                              <path d="M12 5v14M5 12h14" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+
+                                            <!-- Minus (visible when open) -->
+                            <svg class="icon-minus w-4 h-4 text-gray-700" viewBox="0 0 24 24" fill="none"
+                                 stroke="currentColor"
+                                 stroke-width="2" aria-hidden="true">
+                              <path d="M5 12h14" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                          </span>
+                                    </summary>
+
+                                    <div class="mt-3 text-sm text-gray-600">
+                                        <ul class=" flex flex-col gap-2 pl-4">
+                                            <li>
+                                                <a href="/artykul-single" class="month hover:underline">
+                                                    <span class="month-name">Styczeń</span>
+                                                    (<span class="quantity">1233</span>)
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/artykul-single" class="month hover:underline">
+                                                    <span class="month-name">Styczeń</span>
+                                                    (<span class="quantity">1233</span>)
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/artykul-single" class="month hover:underline">
+                                                    <span class="month-name">Styczeń</span>
+                                                    (<span class="quantity">1233</span>)
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </details>
+                            </div>
+                        </div>
+                        <div class=" flex flex-col my-10 max-w-[400px] mx-auto">
+                            <h2>MODAL:</h2>
+                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog" target="_blank">mozilla docs link</a></code>
+
+                            <button id="openModal" class="px-4 py-2 bg-gold text-white rounded">
+                                Open Modal
+                            </button>
+
+                            <!-- Centered modal -->
+                            <dialog id="myModal" class="centered" closedby="any">
+                                <button type="button" aria-label="Close"
+                                        class="absolute cursor-pointer text-[16px] top-2 right-2 w-8 h-8 flex items-center justify-center rounded-full text-gray-500 hover:bg-gray-100"
+                                        data-close>&times;</button>
+                                <div class="flex flex-col gap-4">
+                                    <h3 class="text-xl text-center leading-none text-[30px]">Twoja wiadomość została wysłana</h3>
+                                    <p class="ivy-font font-medium text-center text-[30px]">DZIĘKUJEMY</p>
+                                    <button class="rounded-4xl border-1 py-2 px-10 w-max mx-auto cursor-pointer" id="closeModal" type="button"  >ZAMKNIJ</button>
+                                </div>
+                            </dialog>
+                        </div>
+                    </div>
+                </section>
+                <!---->
+            </div>
+        </div>
+    </section>
+</Layout>
+<script>
+    const modal = document.getElementById('myModal') as HTMLDialogElement;
+    document.getElementById('openModal')?.addEventListener('click', () => modal?.showModal());
+    document.getElementById('closeModal')?.addEventListener('click', () => modal?.close());
+
+    // Optional X close
+    document.addEventListener('click', (e) => {
+        const target = e.target as HTMLElement;
+        if (target.closest('[data-close]') && modal?.open) modal.close();
+    });
+
+    // Click backdrop to close
+    // modal?.addEventListener('click', (e) => {
+    //     if (e.target === modal) modal.close();
+    // });
+</script>

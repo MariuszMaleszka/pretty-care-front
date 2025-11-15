@@ -1,0 +1,214 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeadingPrimary from "../components/HeadingPrimary.astro";
+import HeadingSecondary from "../components/HeadingSecondary.astro";
+import HeadingDecor from "../components/HeadingDecor.astro";
+import CtaBtn from "../components/CtaBtn.astro";
+import BreadCrumbs from "../components/BreadCrumbs.astro";
+import HeadingDecorBig from "../components/HeadingDecorBig.astro";
+import ProductTile from "../components/ProductTile.astro";
+import sampleProduct from "../assets/sample_product.png";
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout>
+    <section class="my-10 md:my-20">
+        <div class="wrapper px-4 md:px-6">
+            <div class="flex justify-center mx-auto my-10">
+                <BreadCrumbs
+                        items={[
+                            {label: 'Home', href: '/'},
+                            {label: 'Sklep', href: '/sklep'},
+                            {label: 'Produkt'}
+                        ]}
+                />
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 w-full max-w-[1200px] mb-10 md:mb-20 mx-auto">
+                <div>
+                    <img loading="lazy" class="mx-auto" src="src/assets/product_image.png" alt="produkt"/>
+                </div>
+                <div>
+                    <h3 class="ivy-font font-medium text-[32px] md:text-[48px] mb-2 leading-none">Balance BiotiQ</h3>
+                    <p class="mb-2 uppercase">Probiotyk</p>
+                    <div class="border-2 border-red-500 p-4 min-h-[200px] mb-2">
+
+                    </div>
+                    <div class="flex flex-col items-center sm:flex-row justify-center sm:justify-start flex-wrap gap-x-4 gap-y-0 text-[12px]">
+                        <div class="flex text-center font-[500] flex-col gap-3 justify-center items-center uppercase text-gold max-w-[130px] p-4">
+                            <img loading="lazy" src="src/assets/product_1_icon.svg" alt="ikonka"/>
+                            <p>darmowa dostawa</p>
+                        </div>
+                        <div class="flex text-center font-[500] flex-col gap-3 justify-center items-center uppercase text-gold max-w-[130px] p-4">
+                            <img loading="lazy" src="src/assets/product_2_icon.svg" alt="ikonka"/>
+                            <p>19 szczepów bakterii</p>
+                        </div>
+                        <div class="flex text-center font-[500] flex-col gap-3 justify-center items-center uppercase text-gold max-w-[130px] p-4">
+                            <img loading="lazy" src="src/assets/product_3_icon.svg" alt="ikonka"/>
+                            <p>testowany laboratoryjnie</p>
+                        </div>
+                    </div>
+                    <p class="flex items-center my-2 text-gold font-[500]">
+                        <img loading="lazy" class="mr-2" src="src/assets/product_delivery_icon.svg" alt="dostawa"/>
+
+                        Dostawa w 1 - 2 dni robocze
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="bg-white shadow-xl border-1 border-[var(--gold)] rounded-[63px] p-6 my-10 md:my-20 mx-auto">
+
+                <div class="max-w-[900px] mx-auto p-2 md:py-12">
+                    <div class="flex justify-center gap-x-6 gap-y-1 items-center text-[24px] font-[500]  mb-6">
+                        <span id="product-desc-tab" class="tab-header active cursor-pointer">Opis</span>
+                        <span id="product-content-tab" class="tab-header cursor-pointer">Skład</span>
+                    </div>
+
+                    <div id="product-desc" class="tab-content my-4">
+                        <div class="my-10 text-smoked wyswig">
+                            Balance BiotiQ to zaawansowany probiotyk opracowany z myślą o wsparciu zdrowia jelit i układu odpornościowego. Zawiera 19 starannie wyselekcjonowanych szczepów bakterii probiotycznych, które współpracują, aby przywrócić równowagę mikroflory jelitowej. Produkt jest testowany laboratoryjnie, co gwarantuje jego skuteczność i bezpieczeństwo stosowania. Balance BiotiQ jest idealnym wyborem dla osób poszukujących naturalnego wsparcia dla swojego układu trawiennego i ogólnego samopoczucia.
+                        </div>
+                    </div>
+                    <div id="product-content" class="tab-content my-4 hidden">
+                        <div class="my-10 text-smoked wyswig">
+                            Czy wierzysz w ux ui design? Nie wszyscy wierzą
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-wrap justify-center gap-2 text-[14px] max-w-[900px] mx-auto px-4 my-10">
+            <span class="product-tag border-[#E3E3E3] rounded-4xl border-1 py-2 px-8">Probiotyki</span>
+            <span class="product-tag border-[#E3E3E3] rounded-4xl border-1 py-2 px-8">Zdrowie</span>
+            <span class="product-tag border-[#E3E3E3] rounded-4xl border-1 py-2 px-8">Mhmmmmm</span>
+            <span class="product-tag border-[#E3E3E3] rounded-4xl border-1 py-2 px-8">Wow</span>
+            <span class="product-tag border-[#E3E3E3] rounded-4xl border-1 py-2 px-8">Future</span>
+            <span class="product-tag border-[#E3E3E3] rounded-4xl border-1 py-2 px-8">So seductive</span>
+        </div>
+    </section>
+    <section>
+        <div class="wrapper px-4 md:px-6">
+            <div class="flex justify-center text-center my-10 my:mb-20">
+                <HeadingDecorBig>
+                    Opinie
+                </HeadingDecorBig>
+            </div>
+            <div class="flex flex-col my-10 my:mb-20 max-w-[1040px] mx-auto">
+                <div class="bg-white w-full  py-4 border-b border-[#E3E3E3]">
+                    <div class="flex flex-col md:flex-row items-center ">
+                        <span class="text-xl font-semibold text-gray-800 mr-3 mb-2">Alicja Von Der Longsurname</span>
+                        <div class="flex items-center mb-2">
+                            <!-- Gwiazdki SVG -->
+                            <svg class="w-5 h-5 text-yellow-500 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                <polygon points="10,1 12.4,7.2 19,7.6 13.7,12.1 15.5,18.6 10,14.8 4.5,18.6 6.3,12.1 1,7.6 7.6,7.2"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-500 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                <polygon points="10,1 12.4,7.2 19,7.6 13.7,12.1 15.5,18.6 10,14.8 4.5,18.6 6.3,12.1 1,7.6 7.6,7.2"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-500 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                <polygon points="10,1 12.4,7.2 19,7.6 13.7,12.1 15.5,18.6 10,14.8 4.5,18.6 6.3,12.1 1,7.6 7.6,7.2"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-500 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                <polygon points="10,1 12.4,7.2 19,7.6 13.7,12.1 15.5,18.6 10,14.8 4.5,18.6 6.3,12.1 1,7.6 7.6,7.2"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <polygon points="10,1 12.4,7.2 19,7.6 13.7,12.1 15.5,18.6 10,14.8 4.5,18.6 6.3,12.1 1,7.6 7.6,7.2"/>
+                            </svg>
+                            <span class="text-lg font-medium text-gray-700">5</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">Polecam! Bardzo smaczny. Stosujemy w całej rodzinie.</p>
+                    <div class="text-sm text-gray-400">25/10/2025</div>
+                </div>
+
+                <div class="bg-white w-full py-4  border-b border-[#E3E3E3]">
+                    <div class="flex flex-col md:flex-row items-center ">
+                        <span class="text-xl font-semibold text-gray-800 mr-3 mb-2">Mariusz</span>
+                        <div class="flex items-center mb-2">
+                            <!-- Gwiazdki SVG -->
+                            <svg class="w-5 h-5 text-yellow-500 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                <polygon points="10,1 12.4,7.2 19,7.6 13.7,12.1 15.5,18.6 10,14.8 4.5,18.6 6.3,12.1 1,7.6 7.6,7.2"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-500 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                <polygon points="10,1 12.4,7.2 19,7.6 13.7,12.1 15.5,18.6 10,14.8 4.5,18.6 6.3,12.1 1,7.6 7.6,7.2"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-500 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                <polygon points="10,1 12.4,7.2 19,7.6 13.7,12.1 15.5,18.6 10,14.8 4.5,18.6 6.3,12.1 1,7.6 7.6,7.2"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-500 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                <polygon points="10,1 12.4,7.2 19,7.6 13.7,12.1 15.5,18.6 10,14.8 4.5,18.6 6.3,12.1 1,7.6 7.6,7.2"/>
+                            </svg>
+                            <svg class="w-5 h-5 text-yellow-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <polygon points="10,1 12.4,7.2 19,7.6 13.7,12.1 15.5,18.6 10,14.8 4.5,18.6 6.3,12.1 1,7.6 7.6,7.2"/>
+                            </svg>
+                            <span class="text-lg font-medium text-gray-700">5</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">Polecam! Bardzo smaczny. Stosujemy w całej rodzinie.</p>
+                    <div class="text-sm text-gray-400">25/10/2025</div>
+                </div>
+
+
+            </div>
+        </div>
+
+    </section>
+    <section class="my-10 md:my-20">
+        <div class="wrapper px-4">
+            <div class="flex justify-center text-center max-w-[1000px] mx-auto my-10 my:mb-20">
+                <HeadingDecorBig>
+                    Nasze pozostałe produkty
+                </HeadingDecorBig>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-3">
+                <ProductTile
+                        image={sampleProduct}
+                        title="IMMUN Postbiotiq"
+                        href="/produkt"
+                />
+                <ProductTile
+                        image={sampleProduct}
+                        title="IMMUN Postbiotiq"
+                        href="/produkt"
+                />
+                <ProductTile
+                        image={sampleProduct}
+                        title="IMMUN Postbiotiq"
+                        href="/produkt"
+                />
+            </div>
+
+        </div>
+
+    </section>
+
+
+</Layout>
+<script type="module" is:inline>
+    const tabs = document.querySelectorAll('.tab-header');
+    const contents = document.querySelectorAll('.tab-content');
+    tabs.forEach((tab, idx) => {
+        tab.addEventListener('click', () => {
+            tabs.forEach(t => t.classList.remove('active'));
+            contents.forEach(c => {
+                c.classList.remove('fade-in');
+                c.classList.add('hidden');
+            });
+            tab.classList.add('active');
+            contents[idx].classList.remove('hidden');
+            // Trigger reflow to restart animation
+            void contents[idx].offsetWidth;
+            contents[idx].classList.add('fade-in');
+        });
+    });
+    // On page load, show the first tab with fade-in
+    window.addEventListener('DOMContentLoaded', () => {
+        contents[0].classList.add('fade-in');
+    });
+</script>
+
+

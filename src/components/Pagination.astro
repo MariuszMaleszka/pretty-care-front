@@ -1,0 +1,57 @@
+---
+const { current = 1, total = 15 } = Astro.props;
+const pages = Array.from({ length: total }, (_, i) => i + 1);
+const hasPrev = current > 1;
+const hasNext = current < total;
+---
+
+<nav class="flex justify-center mt-8" aria-label="Pagination">
+    <ul class="inline-flex gap-2 items-center">
+        <!-- Previous button -->
+        <li>
+            <a
+                    href={hasPrev ? `?page=${current - 1}` : undefined}
+                    aria-label="Previous page"
+                    class={`flex justify-center items-center text-gold min-h-[50px] min-w-[50px] transition font-semibold rounded-full
+                    ${hasPrev ? "hover:border-2 hover:border-gold cursor-pointer" : "opacity-30 cursor-not-allowed pointer-events-none"}
+                `}
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                </svg>
+            </a>
+        </li>
+
+        <!-- Page numbers -->
+        {pages.map(page => (
+                <li>
+                    <a
+                            href={`?page=${page}`}
+                            aria-current={page === current ? "page" : undefined}
+                            class={`flex justify-center items-center text-gold min-h-[50px] min-w-[50px] transition font-semibold rounded-full
+                        ${page === current
+                                ? "border-2 border-gold bg-white"
+                                : "hover:border-1 hover:border-gold"}
+                    `}
+                    >
+                        {page}
+                    </a>
+                </li>
+        ))}
+
+        <!-- Next button -->
+        <li>
+            <a
+                    href={hasNext ? `?page=${current + 1}` : undefined}
+                    aria-label="Next page"
+                    class={`flex justify-center items-center text-gold min-h-[50px] min-w-[50px] transition font-semibold rounded-full
+                    ${hasNext ? "hover:border-2 hover:border-gold cursor-pointer" : "opacity-30 cursor-not-allowed pointer-events-none"}
+                `}
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                </svg>
+            </a>
+        </li>
+    </ul>
+</nav>

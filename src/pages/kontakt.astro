@@ -1,11 +1,95 @@
 ---
 
 import Layout from '../layouts/Layout.astro';
+import HeadingPrimary from "../components/HeadingPrimary.astro";
+import CtaBtn from "../components/CtaBtn.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-    Kontakt coming soon!
+    <section>
+        <div class="text-gold my-10 md:my-20 mb-5 text-center">
+            <HeadingPrimary>
+                SKONTAKTUJ SIĘ Z NAMI
+            </HeadingPrimary>
+        </div>
+    </section>
+    <section class="relative mb-10 md:mb-20 overflow-hidden breathtaking-desinger-container">
+        <img class="absolute object-cover w-full h-full pointer-events-none" loading="lazy"
+             src="/src/assets/about_bg_yellow_paper.png" alt="background"/>
+
+        <div class="wrapper relative px-4 py-10">
+            <div class="bg-white shadow-xl border-1 border-[var(--gold)] rounded-[63px] flex flex-wrap gap-5 justify-around my-10 md:my-20 md:max-w-[850px] mx-auto py-10 px-2 md:p-8">
+                <form class="flex gap-y-4 flex-wrap  md:max-w-[580px] mx-auto">
+                    <div class="flex flex-col w-full px-4">
+                        <label for="company" class="">Nazwa firmy (opcjonalnie)</label>
+                        <input type="text" autocomplete="off" name="company" id="email"/>
+                    </div>
+
+                    <div class="flex flex-col w-full md:w-1/2 px-4">
+                        <label for="name" class="">Imię</label>
+                        <input type="text" autocomplete="off" name="name" id="name"/>
+                    </div>
+                    <div class="flex flex-col w-full md:w-1/2 px-4">
+                        <label for="surname" class="">Nazwisko</label>
+                        <input type="text" autocomplete="off" name="surname" id="surname"/>
+                    </div>
+
+                    <div class="flex flex-col w-full md:w-1/2  px-4">
+                        <label for="email" class="">Email</label>
+                        <input type="email" autocomplete="off" name="email" id="email" required/>
+                    </div>
+
+                    <div class="flex flex-col w-full md:w-1/2  px-4">
+                        <label for="tel" class="">Telefon (opcjonalnie)</label>
+                        <input type="tel" autocomplete="off" name="email" id="tel" required/>
+                    </div>
+
+                    <div class="flex flex-col w-full  px-4">
+                        <label for="message" class="">Wiadomość</label>
+                        <textarea rows="4" type="text" autocomplete="off" name="message" id="message" required/>
+                    </div>
+
+
+
+                    <div class="px-4">
+                        <label class="custom-checkbox-label">
+                            <input type="checkbox" class="custom-checkbox-input"/>
+                            <span class="custom-checkbox-box">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                          <path d="M5 13l4 4L19 7"/>
+                                        </svg>
+                                      </span>
+                            <small class="font-light">
+                                Wyrażam zgodę na przesyłanie informacji handlowych na wskazany adres e-mail.
+                                Szczegółowe
+                                informacje o przetwarzaniu danych znajdzesz w naszej
+                                <a href="/polityka-prywatnosci" target="_self">POLITYCE PRYWATNOŚCI</a>
+                            </small>
+                        </label>
+                    </div>
+
+
+                    <div class="flex justify-center w-full">
+                        <div class="hidden lg:inline-flex mt-8">
+                            <CtaBtn type="submit" class="px-16 py-2 " href="/sklep" variant="gold" size="lg"
+                                    target="_self">
+                                Wyślij
+                            </CtaBtn>
+                        </div>
+                        <div class="lg:hidden mt-8">
+                            <CtaBtn type="submit" class="px-16 py-2 " href="/sklep" variant="gold" size="sm"
+                                    target="_self">
+                                Wyślij
+                            </CtaBtn>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </section>
+
 </Layout>

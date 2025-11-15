@@ -1,11 +1,205 @@
 ---
-
 import Layout from '../layouts/Layout.astro';
+import HeadingPrimary from "../components/HeadingPrimary.astro";
+import Pagination from "../components/Pagination.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-    Artykuly coming soon!
+    <section class="my-10 md:my-20">
+        <div class="wrapper px-4 md:px-6">
+
+            <div class="text-gold mb-10 text-center">
+                <HeadingPrimary>
+                    ARTYKUŁY
+                </HeadingPrimary>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-[7fr_3fr] lg:grid-cols-[8fr_2fr] gap-x-5 lg:gap-x-20 gap-y-4 w-full">
+                <div class="content order-2 md:order-1">
+
+                <!-- highlighted article -->
+                    <a href="/artykul-single" class="article group hover:-translate-y-2 hover:shadow-xl transition-all duration-300" title="Dlaczego płynny probiotyk?">
+                        <div class="flex relative overflow-hidden text-white min-h-[300px] md:min-h-[415px] rounded-[60px]">
+                            <img loading="lazy" class="absolute w-full h-full object-cover filter contrast-110 group-hover:contrast-125 group-hover:scale-105 transition-all duration-300" src="https://picsum.photos/id/10/1200/500" alt="artykuł"/>
+                            <div class="flex relative flex-col justify-between flex-1 p-8 md:px-14  md:py-10">
+                                <h3 class="article-title text-[32px] md:text-[42px] font-[700] my-auto md:max-w-3/4">Dlaczego płynny probiotyk?</h3>
+                                <div class="flex flex-wrap gap-4 text-[14px]">
+                                    <span class="article-cat rounded-2xl border-1 py-1 px-6">Probiotyki</span>
+                                    <span class="article-cat rounded-2xl border-1 py-1 px-6">Zdrowie</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </a>
+                    <!-- other articles -->
+                    <div class="grid grid-cols-1 gap-10 my-10 lg:grid-cols-2">
+                        <a href="/artykul-single" class="article group shadow-xl transition-all duration-300 rounded-[60px]" title="Dlaczego płynny probiotyk?">
+                            <div class="flex flex-col relative overflow-hidden text-white min-h-[250px] md:min-h-[360px] rounded-[60px]">
+                                <div>
+                                    <img loading="lazy" class="w-full h-full object-cover min-h-[180px] max-h-[180px] md:min-h-[250px] md:max-h-[250px] filter contrast-110 group-hover:contrast-125 group-hover:scale-105 transition-all duration-300" src="https://picsum.photos/id/121/200/500" alt="artykuł"/>
+                                </div>
+
+
+                                <div class="flex flex-col bg-white relative p-6 pt-4  flex-1  justify-center">
+                                    <h3 class="article-title mb-4 mt-0 text-gold text-[18px] md:text-[22px] font-[700] my-auto">Nie kupuj tanich probiotyków! Oto dlaczego 1</h3>
+                                    <div class="flex text-gold flex-wrap gap-y-2 gap-x-4 text-[14px]">
+                                        <span class="article-cat rounded-2xl border-1 py-1 px-6">Probiotyki</span>
+                                        <span class="article-cat rounded-2xl border-1 py-1 px-6">Probiotyki</span>
+                                        <span class="article-cat rounded-2xl border-1 py-1 px-6">Zdrowie</span>
+                                        <span class="article-cat rounded-2xl border-1 py-1 px-6">Zdrowie</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </a>
+
+                        <a href="/artykul-single" class="article group shadow-xl transition-all duration-300 rounded-[60px]" title="Dlaczego płynny probiotyk?">
+                            <div class="flex flex-col relative overflow-hidden text-white min-h-[250px] md:min-h-[360px] rounded-[60px]">
+                                <div>
+                                    <img loading="lazy" class="w-full h-full object-cover min-h-[180px] max-h-[180px] md:min-h-[250px] md:max-h-[250px] filter contrast-110 group-hover:contrast-125 group-hover:scale-105 transition-all duration-300" src="https://picsum.photos/id/13/900/300" alt="artykuł"/>
+                                </div>
+
+
+                                <div class="flex flex-col bg-white relative p-6 pt-4  flex-1  justify-center">
+                                    <h3 class="article-title mb-4 mt-0 text-gold text-[18px] md:text-[22px] font-[700] my-auto">Nie kupuj tanich probiotyków! Oto dlaczego</h3>
+                                    <div class="flex text-gold flex-wrap gap-y-2 gap-x-4 text-[14px]">
+                                        <span class="article-cat rounded-2xl border-1 py-1 px-6">Probiotyki</span>
+                                        <span class="article-cat rounded-2xl border-1 py-1 px-6">Probiotyki</span>
+                                        <span class="article-cat rounded-2xl border-1 py-1 px-6">Zdrowie</span>
+                                        <span class="article-cat rounded-2xl border-1 py-1 px-6">Zdrowie</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </a>
+
+                        <a href="/artykul-single" class="article group shadow-xl transition-all duration-300 rounded-[60px]" title="Dlaczego płynny probiotyk?">
+                            <div class="flex flex-col relative overflow-hidden text-white min-h-[250px] md:min-h-[360px] rounded-[60px]">
+                                <div>
+                                    <img loading="lazy" class="w-full h-full object-cover min-h-[180px] max-h-[180px] md:min-h-[250px] md:max-h-[250px] filter contrast-110 group-hover:contrast-125 group-hover:scale-105 transition-all duration-300" src="https://picsum.photos/id/11/500/150" alt="artykuł"/>
+                                </div>
+
+
+                                <div class="flex flex-col bg-white relative p-6 pt-4  flex-1  justify-center">
+                                    <h3 class="article-title mb-4 mt-0 text-gold text-[18px] md:text-[22px] font-[700] my-auto">Nie kupuj tanich probiotyków! Oto dlaczego</h3>
+                                    <div class="flex text-gold flex-wrap gap-y-2 gap-x-4 text-[14px]">
+                                        <span class="article-cat rounded-2xl border-1 py-1 px-6">Probiotyki</span>
+                                        <span class="article-cat rounded-2xl border-1 py-1 px-6">Probiotyki</span>
+                                        <span class="article-cat rounded-2xl border-1 py-1 px-6">Zdrowie</span>
+                                        <span class="article-cat rounded-2xl border-1 py-1 px-6">Zdrowie</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </a>
+
+                    </div>
+                    <div class="flex justify-center my-10 md:my-20">
+                        <Pagination current={1} total={5} />
+
+                    </div>
+                </div>
+                <aside id="archive-articles-nav" class="small-accordions  mb-5 order-1 md:order-2">
+                    <p class="text-gold font-[500] text-[20px] uppercase">
+                        archiwum
+                    </p>
+                    <details class="w-full bg-white px-4 py-2">
+                        <summary class="flex items-center justify-between cursor-pointer text-sm font-medium">
+                            <span class="accordion-title year font-[700]">2025</span>
+
+                            <span class="flex items-center ml-3">
+                            <!-- Plus (visible when closed) -->
+                            <svg class="icon-plus w-4 h-4 text-gray-700" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                 stroke-width="2" aria-hidden="true">
+                              <path d="M12 5v14M5 12h14" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+
+                                                    <!-- Minus (visible when open) -->
+                            <svg class="icon-minus w-4 h-4 text-gray-700" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                 stroke-width="2" aria-hidden="true">
+                              <path d="M5 12h14" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                          </span>
+                        </summary>
+
+                        <div class="mt-3 text-sm text-gray-600">
+                            <ul class=" flex flex-col gap-2 pl-4">
+                                <li>
+                                    <a href="/artykul-single" class="month hover:underline">
+                                        <span class="month-name">Styczeń</span>
+                                         (<span class="quantity">1233</span>)
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/artykul-single" class="month hover:underline">
+                                        <span class="month-name">Styczeń</span>
+                                        (<span class="quantity">1233</span>)
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/artykul-single" class="month hover:underline">
+                                        <span class="month-name">Styczeń</span>
+                                        (<span class="quantity">1233</span>)
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </details>
+                    <details class="w-full bg-white px-4 py-2">
+                        <summary class="flex items-center justify-between cursor-pointer text-sm font-medium">
+                            <span class="accordion-title year font-[700]">2024</span>
+
+                            <span class="flex items-center ml-3">
+                            <!-- Plus (visible when closed) -->
+                            <svg class="icon-plus w-4 h-4 text-gray-700" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                 stroke-width="2" aria-hidden="true">
+                              <path d="M12 5v14M5 12h14" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+
+                                <!-- Minus (visible when open) -->
+                            <svg class="icon-minus w-4 h-4 text-gray-700" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                 stroke-width="2" aria-hidden="true">
+                              <path d="M5 12h14" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                          </span>
+                        </summary>
+
+                        <div class="mt-3 text-sm text-gray-600">
+                            <ul class=" flex flex-col gap-2 pl-4">
+                                <li>
+                                    <a href="/artykul-single" class="month hover:underline">
+                                        <span class="month-name">Styczeń</span>
+                                        (<span class="quantity">1233</span>)
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/artykul-single" class="month hover:underline">
+                                        <span class="month-name">Styczeń</span>
+                                        (<span class="quantity">1233</span>)
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/artykul-single" class="month hover:underline">
+                                        <span class="month-name">Styczeń</span>
+                                        (<span class="quantity">1233</span>)
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/artykul-single" class="month hover:underline">
+                                        <span class="month-name">Styczeń</span>
+                                        (<span class="quantity">1233</span>)
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </details>
+                </aside>
+            </div>
+        </div>
+    </section>
 </Layout>
+<style>
+
+</style>

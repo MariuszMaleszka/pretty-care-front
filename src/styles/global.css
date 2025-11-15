@@ -30,6 +30,13 @@ html {
     color: #fff;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
 }
+
+main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: flex-start !important;
+}
 .museo-font {
     font-family: museo-sans, sans-serif;
 }
@@ -50,7 +57,7 @@ html {
     margin-right: auto;
 }
 
-/* dot in header cart icon*/
+/* DOT IN HEADER ICON CART*/
 .counter-badge {
     background-color: var(--gold);
     color: #fff;
@@ -80,7 +87,7 @@ html {
     background: linear-gradient(160deg,rgba(172, 172, 172, 1) 0%, rgba(87, 87, 86, 1) 100%);
 }
 
-/* navigation */
+/* PAGE NAVIGATION  */
 .nav-items {
     a {
         position: relative;
@@ -148,7 +155,8 @@ html {
     bottom: -42.5px; /* half of height to overlap */
 }
 
-input {
+/* FORM */
+input, textarea {
     padding: .5rem 1rem;
     border: 1px solid var(--gold);
     border-radius: 9px;
@@ -200,7 +208,7 @@ input {
     opacity: 1;
     color: #fff;
 }
-
+/* EDITOR */
 .wyswig {
     ul {
         margin-block: 4px;
@@ -211,6 +219,7 @@ input {
         }
     }
 }
+
 
 .striped-lines-gold {
     :first-child {
@@ -223,6 +232,7 @@ input {
         font-weight: 700;
     }
 }
+/* COUNTER DOTS */
 .counter-circle{
     width: 32px;
     height: 32px;
@@ -238,4 +248,95 @@ input {
         max-width: 58px;
         max-height: 58px;
     }
+}
+
+/* SMALL ACCORDION */
+.small-accordions {
+    /* hide default marker */
+    details summary::-webkit-details-marker {
+        display: none;
+    }
+
+    details summary::marker {
+        display: none;
+    }
+
+    /* show plus when closed, minus when open */
+    details summary .icon-minus {
+        display: none;
+    }
+
+    details[open] summary .icon-minus {
+        display: inline-block;
+    }
+
+    details[open] summary .icon-plus {
+        display: none;
+    }
+}
+
+/* BREAD CRUMBS */
+.breadcrumbs {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.breadcrumb-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.breadcrumb-item a {
+    text-decoration: none;
+}
+
+.breadcrumb-item a:hover {
+    text-decoration: underline;
+}
+
+.separator {
+    color: #666;
+}
+
+/*TABS IN PRODUCT PAGE*/
+.tab-header.active {
+    border-bottom: 1px solid var(--gold);
+}
+.tab-content.hidden {
+    display: none;
+}
+.tab-content {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+.tab-content.fade-in {
+    opacity: 1;
+    visibility: visible;
+}
+.tab-content.hidden {
+    display: none;
+}
+
+
+/* MODAL */
+dialog.centered::backdrop {
+    background: rgba(0,0,0,0.6);
+}
+dialog.centered[open] {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    margin: 0;
+    max-width: 32rem;
+    width: 90%;
+    border: none;
+    border-radius: 0.75rem;
+    padding: 1.5rem 1.75rem;
 }

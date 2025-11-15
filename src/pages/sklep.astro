@@ -1,11 +1,111 @@
 ---
-
 import Layout from '../layouts/Layout.astro';
+import HeadingPrimary from "../components/HeadingPrimary.astro";
+import ProductTile from "../components/ProductTile.astro";
+import sampleProduct from '../assets/sample_product.png';
+import Pagination from '../components/Pagination.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-    Shop page coming soon!
+    <section class="my-10 md:my-20">
+        <div class="wrapper px-4 md:px-6">
+
+            <div class="text-gold mb-10 md:mb-20 text-center">
+                <HeadingPrimary>
+                    SKLEP
+                </HeadingPrimary>
+                <p class="uppercase text-[26px]">Wszystkie produkty</p>
+            </div>
+            <div class="shop-products-grid grid grid-cols-1  lg:grid-cols-[280px_1fr] gap-x-5 w-full">
+                <aside class="mt-10">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus dicta eos neque nisi placeat quam
+                    qui unde veniam! Ad beatae ducimus facilis laudantium magnam mollitia quia quibusdam quisquam quo
+                    voluptatum!
+                </aside>
+                <!--form-->
+                <form>
+
+                    <div class="lg:ml-8 mt-8 lg:mt-0 md:mb-10">
+                        <div class="relative inline-flex items-center gap-x-2 w-64">
+                            <label for="sort-select" class="text-sm text-gray-600 whitespace-nowrap">Sortuj według:</label>
+                            <select
+                                    id="sort-select"
+                                    class="flex-1 appearance-none bg-white  px-4 py-2text-gray-700  cursor-pointer "
+                            >
+                                <option value="default">Domyślne</option>
+                                <option value="price-asc">Cena: od najniższej</option>
+                                <option value="price-desc">Cena: od najwyższej</option>
+                                <option value="name-asc">Nazwa: A-Z</option>
+                                <option value="name-desc">Nazwa: Z-A</option>
+                                <option value="newest">Najnowsze</option>
+                            </select>
+                            <div class="pointer-events-none absolute right-0 flex items-center">
+                                <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pretty-products grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3  gap-y-10 gap-x-5">
+                        <!-- Product items will go here -->
+                        <ProductTile
+                                image={sampleProduct}
+                                title="IMMUN Postbiotiq"
+                                category="Probiotyki"
+                                price="29.99"
+                                promo="19.99"
+                                href="/produkt"
+
+                        />
+
+                        <ProductTile
+                                image={sampleProduct}
+                                title="BALANCE BIOTIQ"
+                                category="Probiotyki"
+                                price="29.99"
+                                href="/produkt"
+
+                        />
+                        <ProductTile
+                                image={sampleProduct}
+                                title="ULTRA BALANCE BIOTIQ"
+                                category="Probiotyki"
+                                price="29.99"
+                        />
+                        <ProductTile
+                                image={sampleProduct}
+                                title="FOREVER BREATHTAKER"
+                                category="Probiotyki"
+                                price="29.99"
+                                promo="19.99"
+                        />
+                        <ProductTile
+                                image="https://picsum.photos/id/237/200/300"
+                                title="Red Shirt"
+                                category="Probiotyki"
+                                price="29.99"
+                                promo="19.99"
+                        />
+                        <ProductTile
+                                image="https://picsum.photos/id/69/1200/900"
+                                title="Red Shirt"
+                                category="Probiotyki"
+                                price="29.99"
+                                promo="19.99"
+                        />
+                    </div>
+
+            <div class="flex justify-center my-10 md:my-20">
+                <Pagination current={1} total={5} />
+
+            </div>
+                </form>
+
+            </div>
+
+        </div>
+    </section>
 </Layout>

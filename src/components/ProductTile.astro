@@ -1,58 +1,95 @@
 ---
-// File: `src/components/ProductTile.astro`
 import {Image} from 'astro:assets';
 import CtaBtn from './CtaBtn.astro';
 import goldCircle from '../assets/gold-circle.png';
 
-const { image, title, category, price, promo } = Astro.props;
-const rootClass = `product-tile ${promo ? 'product-tile--promo' : ''} group p-4 flex flex-col items-center`.trim();
+const {
+    image,
+    title,
+    category,
+    price,
+    promo,
+    href,
+    productHref = href || '/'
+} = Astro.props;
+
+const rootClass = `product-tile ${promo ? 'product-tile--promo' : ''} group p-6 flex flex-col items-center`.trim();
+const imgSrc = typeof image === 'string' ? image : image.src;
+
+const hasPrice = price !== undefined && price !== null && price !== '';
+const hasPromo = promo !== undefined && promo !== null && promo !== '';
+const showPriceBlock = hasPromo || hasPrice;
+const addBtnMarginClass = showPriceBlock ? '' : 'mt-4';
 ---
 <div class={rootClass}>
-    <div class="relative w-full">
-        <Image
-                src={image}
+    <div class="relative w-full max-w-[350px]">
+        <img
+                src={imgSrc}
                 alt={title}
-                class="w-full "
+                loading="lazy"
+                class="
+        w-full
+        mx-auto
+        object-contain
+        min-h-[300px]
+        max-h-[300px]
+      "
         />
-        {promo ? (
-                <div class="promo-badge absolute top-0 -right-5 text-white font-semibold scale-70 sm:scale-100 ">
-                    <Image
-                            src={goldCircle}
-                            alt="Gold Circle"
-                    />
+        {hasPromo ? (
+                <div class="promo-badge absolute -top-6 -right-6 text-white font-semibold scale-70 2xl:scale-100 ">
+                    <Image src={goldCircle} alt="Gold Circle" />
                     <span class=" absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ">
-            PROMOCJA
+          PROMOCJA
         </span>
                 </div>
         ) : null}
 
-        <!-- absolute button over bottom of image; visible only on hover -->
         <div class="absolute left-1/2 -translate-x-1/2 bottom-3 z-10">
             <CtaBtn
-                    href="/"
+                    href={productHref}
                     variant="ghost"
                     size="sm"
-                    target="_self"
-                    class="shadow-lg py-3 px-8 opacity-0 pointer-events-none transition-opacity duration-200 ease-in-out group-hover:opacity-100 group-hover:pointer-events-auto"
+                    target="_blank"
+                    class="shadow-lg py-3 z-20 px-8 opacity-0 pointer-events-none transition-opacity duration-200 ease-in-out group-hover:opacity-100 group-hover:pointer-events-auto group-hover:!bg-white"
             >
                 Szczegóły
             </CtaBtn>
         </div>
     </div>
 
-    <h4 class="product-title text-lg font-semibold text-[28px]">{title}</h4>
-    <h5 class="product-category uppercase text-base  font-semibold text-gray-600 -mt-2 ">{category}</h5>
+    <h4 class="product-title leading-none my-2 text-center text-lg font-semibold text-[28px]">{title}</h4>
+    <h5 class="product-category uppercase text-base font-semibold text-gray-600 -mt-2">{category}</h5>
+
     <div class="mt-auto flex flex-col items-center justify-between w-full">
-        <div class="product-price flex flex-col text-[28px] font-bold mt-3 mb-5">
-            {promo ? (
-                    <div class="flex flex-col items-center">
-                    <span class="promo-price text-gold">{promo} <span class="currency">zł</span></span>
-                    <span class="standard-price line-through font-light -mt-2 text-gray-500">{price} <span class="currency">zł</span></span>
+        {showPriceBlock ? (
+                <div class="product-price flex flex-col text-[28px] font-bold mt-3 mb-5">
+                    {hasPromo ? (
+                            <div class="flex flex-col items-center">
+            <span class="promo-price text-gold">
+              {promo} <span class="currency">zł</span>
+            </span>
+                                {hasPrice ? (
+                                        <span class="standard-price line-through font-light -mt-2 text-gray-500">
+                {price} <span class="currency">zł</span>
+              </span>
+                                ) : null}
+                            </div>
+                    ) : hasPrice ? (
+                            <span class="standard-price">
+            {price} <span class="currency">zł</span>
+          </span>
+                    ) : null}
                 </div>
-            ) : (
-                    <span class="standard-price">{price} <span class="currency">zł</span></span>
-            )}
-        </div>
-        <CtaBtn href="/get-started" variant="primary" size="md" class="px-8 py-1" target="_self">Dodaj do koszyka</CtaBtn>
+        ) : null}
+
+        <CtaBtn
+                href="/get-started"
+                variant="primary"
+                size="md"
+                class={`px-8 py-1 ${addBtnMarginClass}`}
+                target="_self"
+        >
+            Dodaj do koszyka
+        </CtaBtn>
     </div>
 </div>
