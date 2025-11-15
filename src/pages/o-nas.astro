@@ -1,11 +1,238 @@
 ---
-
 import Layout from '../layouts/Layout.astro';
+import HeadingPrimary from "../components/HeadingPrimary.astro";
+import HeadingSecondary from "../components/HeadingSecondary.astro";
+import CtaBtn from "../components/CtaBtn.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-    O nas coming soon!
+    <section class="my-10 md:my-20">
+        <div class="wrapper px-4 md:px-6">
+            <div class="text-gold mb-10 text-center">
+                <HeadingPrimary>
+                    O&nbsp;NAS
+                </HeadingPrimary>
+            </div>
+            <div class="flex flex-row-reverse flex-wrap gap-y-8 mt-10 md:mt-20 md:max-w-[1200px] mx-auto">
+                <div class="w-full lg:w-1/2">
+                    <div class="text-gold">
+                        <HeadingSecondary>
+                            Nasza historia
+                        </HeadingSecondary>
+                    </div>
+                    <p class="lg:text-[24px] font-[300] mb-8">Nasza historia i nowe produkty</p>
+                    <p class="font-[300]">
+                        Nazywam się Izabella.
+                        <br>
+                        <br>
+                        Kilka lat temu życie postawiło przede mną największe wyzwanie – diagnozę raka szyjki macicy. Ten
+                        trudny czas nauczył mnie, jak ważna jest troska o siebie i wspieranie naturalnych mechanizmów
+                        obronnych organizmu. Po walce z chorobą poczułam ogromną wdzięczność i siłę, które postanowiłam
+                        przekuć w coś dobrego dla innych ludzi. Chciałam stworzyć produkty, które dodadzą odwagi i
+                        pewności siebie na co dzień, dbając o zdrowie od środka.
+                        <br>
+                        <br>
+                        Dzięki wiedzy i doświadczeniu dwóch wybitnych naukowczyń: dr Justyny Piechockiej, ekspertki od
+                        mikrobioty jelitowej, oraz prof. dr hab. Darii Szymanowskiej, ekspertki ds. mikrobiologii
+                        przemysłowej, powstały formuły, które łączą w sobie moc natury i najnowsze osiągnięcia nauki.
+                        Nasza marka powstała z pasji do zdrowia, tworzona przez kobiety dla wszystkich ludzi dbających o
+                        siebie.
+                    </p>
+                </div>
+
+                <div class="w-full lg:w-1/2">
+                    <img class="lg:pr-16" loading="lazy" src="/src/assets/o_probiotykach_1.png" alt="balance biotiq"/>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mb-10 md:mb-20">
+        <div class="wrapper">
+            <div class="md:max-w-[1200px] mx-auto px-4 md:px-6">
+                <div class="text-gold text-center md:mt-20 mt-10">
+                    <HeadingSecondary>
+                        Wyjątkowe składniki i produkty
+                    </HeadingSecondary>
+                </div>
+                <p class="lg:text-[24px] font-[300] mb-8 text-center">19 wyselekcjonowanych szczepów probiotycznych </p>
+                <div class="wyswig">
+                    W naszych produktach łączymy 19 wyselekcjonowanych szczepów probiotycznych z biofermentami z
+                    najlepszego, co daje natura. Bazujemy na naturalnych ekstraktach z dzikiej róży, lipy, czarnego bzu
+                    i maliny oraz na fermentowanej wodzie ryżowej. Każdy z tych składników wnosi unikalne korzyści: na
+                    przykład dzika róża to jedno z najbogatszych źródeł witaminy C i przeciwutleniaczy (flawonoidów,
+                    karotenoidów), które neutralizują wolne rodniki i pomagają chronić organizm przed stresem
+                    oksydacyjnym. Kwiat lipy działa uspokajająco i przeciwzapalnie, łagodzi napięcie nerwowe oraz
+                    wspiera odporność dzięki obecnej w niej witaminie C. 
+                    <br>
+                    <br>
+                    Czarny bez od wieków używany jest w medycynie ludowej na przeziębienia – zawiera witaminy i
+                    minerały, które wzmacniają układ odpornościowy i zmniejszają podatność na infekcje. Malina zaś
+                    dostarcza cenne polifenole (kwercetynę, kwas elagowy) i witaminę C, a jej ekstrakty wykazują
+                    działanie przeciwzapalne. Wszystkie te surowce poddajemy procesom fermentacji, uzyskując
+                    postbiotyczne metabolity wspomagające barierę jelitową oraz immunomodulację.
+                    <br>
+                    <br>
+                    Dzięki takim składnikom nasze probiotyki i postbiotyki dostarczają naturalnej ochrony – wzmacniają
+                    odporność i wspierają organizm wewnętrznie, nie zapominając o delikatnej, kobiecej wrażliwości.
+
+                </div>
+                <div class="flex items-center justify-center flex-wrap my-10 md:my-20 mx-auto">
+                    <div>
+                        <img loading="lazy" src="src/assets/ingredient_1.png" alt="ingredient"/>
+                    </div>
+                    <div>
+                        <img loading="lazy" src="src/assets/ingredient_2.png" alt="ingredient"/>
+                    </div>
+                    <div>
+                        <img loading="lazy" src="src/assets/ingredient_3.png" alt="ingredient"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="my-10 md:my-20">
+        <div class="flex flex-wrap gap-y-8 mb-10 md:mb-20 md:max-w-[1200px] mx-auto px-4">
+            <div class="w-full lg:w-1/2">
+                <div class="text-gold">
+                    <HeadingSecondary>
+                        Siła nauki i fermentacji
+                    </HeadingSecondary>
+                </div>
+                <p class="lg:text-[24px] font-[300] mb-8">I dlaczego powinno się go brać</p>
+                <p>
+                    Korzystamy z dobrodziejstw fermentacji – starożytnej metody o udokumentowanym wpływie na zdrowie
+                    jelit. Badania pokazują, że dieta bogata w produkty fermentowane znacząco zwiększa różnorodność
+                    mikrobiomu jelitowego i obniża poziom zapalnych markerów w organizmie. Fermentowane składniki
+                    dostarczają żywych probiotyków i pożytecznych enzymów, co wzmacnia naturalną odporność i pomaga
+                    organizmowi utrzymać równowagę.
+                    <br>
+                    <br>
+                    Naukowcy potwierdzają również, że fermentowane produkty są doskonałym źródłem korzystnych bakterii i
+                    ich metabolitów (postbiotyków) niezbędnych dla zdrowej flory jelitowej. Tę wiedzę przekuwamy w
+                    innowacyjne preparaty – nasze płynne probiotyki powstają w warunkach laboratoryjnej precyzji, jednak
+                    czerpią z mądrości tradycyjnej fermentacji. Fermentowana woda ryżowa, na której się opieramy,
+                    wykazuje szczególnie korzystne działanie: wzbogaca mikrobiotę jelitową w pożyteczne szczepy i
+                    enzymy, co potwierdzono badaniem naukowym.
+                    <br>
+                    <br>
+                    Dzięki temu nasze formuły wspierają trawienie, odbudowę mikrobioty po antybiotykoterapii oraz ogólną
+                    odporność organizmu – dokładnie tak, jak potwierdzają to najnowsze odkrycia mikrobiologii i
+                    immunologii.
+                </p>
+            </div>
+
+            <div class="w-full lg:w-1/2">
+                <img class="lg:pl-16" loading="lazy" src="/src/assets/ingredient_4_section.png" alt="balance biotiq"/>
+            </div>
+        </div>
+    </section>
+
+    <section class="relative my-10 md:my-20 overflow-hidden breathtaking-desinger-container">
+        <img class="absolute object-cover w-full h-full pointer-events-none" loading="lazy"
+             src="/src/assets/about_bg_yellow_paper.png" alt="background"/>
+
+        <div class="wrapper relative px-4 py-10">
+            <div class="text-white mt-10 md:mt-20 mb-5 text-center">
+                <HeadingPrimary>
+                    WARTOŚCI I CELE
+                </HeadingPrimary>
+            </div>
+            <div class="text-white md:px-10 font-weight-[500] mb-10 md:max-w-[990px] mx-auto">
+                <p>
+                    Naszymi wartościami są empatia, autentyczność i zaufanie – wiemy, że zdrowie to rzecz osobista, a
+                    marka premium oznacza pełną transparentność. Dążymy do tego, by każdy klient poczuł się w centrum
+                    uwagi: doceniamy jej intuicję i prawa do świadomego wyboru. Nauka i innowacja to nasz fundament –
+                    stale inwestujemy w badania i współpracę z ekspertami, co pozwala nam udoskonalać formuły i
+                    wprowadzać przełomowe rozwiązania. Zależy nam także na naturalności i jakości: w całym procesie
+                    produkcji używamy tylko surowców najwyższej klasy, bez kompromisów jakościowych. Zrównoważony
+                    rozwój i odpowiedzialność za planetę są dla nas równie ważne – od upraw roślin po proces fermentacji
+                    dbamy o środowisko i etyczne praktyki.
+                </p>
+            </div>
+            <div class="flex flex-wrap gap-5 justify-around my-10 md:my-20 md:max-w-[1300px] mx-auto">
+                <div class="flex bg-white p-8 rounded-4xl flex-col justify-start items-center gap-5 sm:max-w-[240px] hover:shadow-lg hover:scale-105 transform transition duration-200 ease-in-out">
+                    <div>
+                        <img class="min-h-[81px]" loading="lazy" src="/src/assets/about_icon_1.png" alt="value"/>
+                    </div>
+                    <p class="uppercase text-center text-[20px] font-[600]">Edukacja i&nbsp;empowerment</p>
+                    <p>Budujemy społeczność świadomych klientów, edukując o roli mikrobiomu i naturalnych metodach
+                        wspierania zdrowia.</p>
+                </div>
+
+                <div class="flex bg-white p-8 rounded-4xl flex-col justify-start items-center gap-5 sm:max-w-[240px] hover:shadow-lg hover:scale-105 transform transition duration-200 ease-in-out">
+
+                    <div>
+                        <img class="" loading="lazy" src="/src/assets/about_icon_2.png" alt="value"/>
+                    </div>
+                    <p class="uppercase text-center text-[20px] font-[600]">Rozwój naukowy</p>
+                    <p>Kontynuujemy badania nad probiotykami i postbiotykami, współpracując z placówkami naukowymi, by
+                        stale podnosić skuteczność produktów.</p>
+                </div>
+                <div class="flex bg-white p-8 rounded-4xl flex-col justify-start items-center gap-5 sm:max-w-[240px] hover:shadow-lg hover:scale-105 transform transition duration-200 ease-in-out">
+
+                    <div>
+                        <img class="min-h-[81px]" loading="lazy" src="/src/assets/about_icon_3.png" alt="value"/>
+                    </div>
+                    <p class="uppercase text-center text-[20px] font-[600]">Budowa marki premium</p>
+                    <p>Stawiamy na najwyższą jakość i prestiż, aby nasze produkty były synonimem zaufania i luksusowej
+                        troski o zdrowie.</p>
+                </div>
+                <div class="flex bg-white p-8 rounded-4xl flex-col justify-start items-center gap-5 sm:max-w-[240px] hover:shadow-lg hover:scale-105 transform transition duration-200 ease-in-out">
+
+                    <div>
+                        <img class="min-h-[81px]" loading="lazy" src="/src/assets/about_icon_4.png" alt="value"/>
+                    </div>
+                    <p class="uppercase text-center text-[20px] font-[600]">Globalna ekspansja</p>
+                    <p>Chcemy dzielić się naszą pasją z klientami na całym świecie, aby świadome podejście do zdrowia
+                        było dostępne niezależnie od granic.</p>
+                </div>
+                <div class="flex bg-white p-8 rounded-4xl flex-col justify-start items-center gap-5 sm:max-w-[240px] hover:shadow-lg hover:scale-105 transform transition duration-200 ease-in-out">
+
+                    <div>
+                        <img class="min-h-[81px]" loading="lazy" src="/src/assets/about_icon_5.png" alt="value"/>
+                    </div>
+                    <p class="uppercase text-center text-[20px] font-[600]">Transparentność i&nbsp;etyka</p>
+                    <p>
+                        Budujemy społeczność świadomych klientów, edukując o roli mikrobiomu i naturalnych metodach
+                        wspierania zdrowia.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="my-10 md:my-20">
+        <div class="wrapper px-4 md:px-6">
+            <div class="max-w-[610px] mx-auto">
+                <p>
+                    Nasza misja to opowieść o nadziei i odwadze – chcemy, aby każdy produkt łączył siłę nauki z mocą natury,
+                    inspirując kobiety do dbania o siebie w pełni świadomie. Dążymy do tego, by wspierać zdrowie i dobrostan
+                    osób wrażliwych, oferując im wyłącznie najlepsze, badaniom oparte formuły.
+                    <br>
+                    <br>
+                    Dzięki emocjonalnej historii, jaką niesie nasza założycielka, z wdzięcznością służymy jej doświadczeniami, a
+                    wartości premium, innowacyjności i rzetelności są dla nas drogowskazem w realizacji codziennego celu –
+                    budowania zdrowia i równowagi u naszych klientek.
+                </p>
+                <div class="flex justify-center ">
+                    <div class="hidden md:inline-flex mt-14">
+                        <CtaBtn class="px-16 py-2 " href="/get-started" variant="primary" size="lg" target="_self">
+                            Sprawdź
+                        </CtaBtn>
+                    </div>
+                    <div class="md:hidden mt-12">
+                        <CtaBtn class="px-16 py-2 " href="/get-started" variant="primary" size="sm" target="_self">
+                            Sprawdź
+                        </CtaBtn>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </Layout>

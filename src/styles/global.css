@@ -25,6 +25,11 @@ html {
     font-weight: 300;
 
 }
+::selection {
+    background: var(--gold);
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
+}
 .museo-font {
     font-family: museo-sans, sans-serif;
 }
@@ -109,11 +114,14 @@ html {
 }
 
 
-.newsletter-container {
+.newsletter-container,
+.breathtaking-desinger-container {
     position: relative;
     z-index: 1;
 }
 
+.breathtaking-desinger-container::before,
+.breathtaking-desinger-container::after,
 .newsletter-container::before,
 .newsletter-container::after {
   display: none;
@@ -127,13 +135,15 @@ html {
         background: #fff;
         border-radius: 100% / 100%;
         z-index: 2;
+        pointer-events: none;
     }
 }
-
+.breathtaking-desinger-container:before,
 .newsletter-container::before {
     top: -42.5px; /* half of height to overlap */
 }
 
+.breathtaking-desinger-container:after,
 .newsletter-container::after {
     bottom: -42.5px; /* half of height to overlap */
 }
